@@ -52,8 +52,12 @@ namespace AddressBook
                         Console.WriteLine();
                         break;
 
-                   
-                    
+                    case 2:
+
+                        addressBook.ViewContact();
+                        Console.WriteLine();
+                        break;
+
                 }
             }
 

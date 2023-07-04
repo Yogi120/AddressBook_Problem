@@ -32,6 +32,16 @@ namespace AddressBook
             Console.WriteLine("Contact added successfully");
         }
 
+        public void ViewContact()
+        {
+            foreach (Contact contact in contacts)
+            {
+                Console.WriteLine(contact.Name);
+                Console.WriteLine(contact.PhoneNumber);
+                Console.WriteLine(contact.Email);
+            }
+        }
+
     }
     
 }

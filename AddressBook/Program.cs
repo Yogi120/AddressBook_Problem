@@ -72,6 +72,13 @@ namespace AddressBook
                         addressBook.DisplayContact();
                         break;
 
+                    case 5:
+
+                        Console.WriteLine("Enter the name to delete ");
+                        string nametodelte = Console.ReadLine();
+                        addressBook.DeleteContact(nametodelte);
+                        break;
+
                 }
             }
 

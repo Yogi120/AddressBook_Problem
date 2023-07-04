@@ -75,6 +75,23 @@ namespace AddressBook
                 Console.WriteLine(contact.Name);
             }
         }
+        public void DeleteContact(string name)
+        {
+
+            foreach (Contact contact in contacts)
+            {
+                if (contact.Name == name)
+                {
+                    contacts.Remove(contact);
+                    Console.WriteLine("Contact deleted successfully :");
+                    DisplayContact();
+                    return;
+
+                }
+
+            }
+            Console.WriteLine("contact not found");
+        }
 
     }
     

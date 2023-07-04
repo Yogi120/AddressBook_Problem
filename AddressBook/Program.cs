@@ -66,6 +66,12 @@ namespace AddressBook
                         Console.WriteLine();
                         break;
 
+                    case 4:
+
+                        Console.WriteLine("Displaying all contact");
+                        addressBook.DisplayContact();
+                        break;
+
                 }
             }
 

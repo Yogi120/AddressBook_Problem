@@ -68,6 +68,14 @@ namespace AddressBook
             }
         }
 
+        public void DisplayContact()
+        {
+            foreach (Contact contact in contacts)
+            {
+                Console.WriteLine(contact.Name);
+            }
+        }
+
     }
     
 }

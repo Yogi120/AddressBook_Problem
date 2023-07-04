@@ -42,6 +42,32 @@ namespace AddressBook
             }
         }
 
+        public void EditContact(string name)
+        {
+            foreach (Contact contact in contacts)
+            {
+
+                if (contact.Name == name)
+                {
+                    Console.WriteLine("Enter the changes");
+
+                    Console.Write("Enter the new email :");
+                    string newEmail = Console.ReadLine();
+
+                    Console.Write("Enter the new PhoneNumber :");
+                    string newPhone_number = Console.ReadLine();
+
+                    contact.PhoneNumber = newPhone_number;
+                    contact.Email = newEmail;
+                }
+
+                else if (contact.Name != name)
+                {
+                    Console.WriteLine("The contact doesn't exsit !");
+                }
+            }
+        }
+
     }
     
 }

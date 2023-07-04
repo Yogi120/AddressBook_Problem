@@ -58,6 +58,14 @@ namespace AddressBook
                         Console.WriteLine();
                         break;
 
+                    case 3:
+
+                        Console.WriteLine("Enter the name of contact to edit :");
+                        string contactname = Console.ReadLine();
+                        addressBook.EditContact(contactname);
+                        Console.WriteLine();
+                        break;
+
                 }
             }
 

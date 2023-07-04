@@ -5,11 +5,15 @@ using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+using System.Xml.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 namespace AddressBook
 {
     public class Contact
     {
+
         public string Name;
         public string PhoneNumber;
         public string Email;
@@ -22,12 +26,44 @@ namespace AddressBook
         public List<Contact> contacts;
         public AddressBook()
         {
+
             contacts = new List<Contact>();
         }
 
         public void AddContact(Contact contact)
         {
-            contacts.Add(contact);
+            Regex checkname = new Regex("^[A-Z][a-zA-Z]{2,}$");
+            if (checkname.IsMatch(contact.Name))
+            {
+                contacts.Add(contact);
+            }
+            else
+            {
+                Console.WriteLine("Invalid Name format format");
+                return;
+            }
+
+            Regex checkMob = new Regex("[1-9]{2}[ ][0-9]{10}");
+            if (checkMob.IsMatch(contact.PhoneNumber))
+            {
+                contacts.Add(contact);
+            }
+            else
+            {
+                Console.WriteLine("Invalid Phone number format");
+                return;
+            }
+
+            Regex checkemail = new Regex("[a-z]{3}.[a-z]{3}@[a-z]{2}.[a-z]{2}.[a-z]{2}");
+            if (checkemail.IsMatch(contact.Email))
+            {
+                contacts.Add(contact);
+            }
+            else
+            {
+                Console.WriteLine("Invalid Email Format");
+                return;
+            }
 
             Console.WriteLine("Contact added successfully");
         }

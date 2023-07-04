@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace AddressBook
 {
@@ -36,12 +38,13 @@ namespace AddressBook
                         string phone_Number = Console.ReadLine();
                         Console.Write("Enter Email: ");
                         string email = Console.ReadLine();
-                        Console.Write("Enter the state");
+                        Console.Write("Enter the state: ");
                         string state = Console.ReadLine();
-                        Console.Write("Enter the city");
+                        Console.Write("Enter the city: ");
                         string city = Console.ReadLine();
 
                         Contact newcontacts = new Contact();
+                        
                         newcontacts.Name = name;
                         newcontacts.PhoneNumber = phone_Number;
                         newcontacts.Email = email;
@@ -78,6 +81,11 @@ namespace AddressBook
                         string nametodelte = Console.ReadLine();
                         addressBook.DeleteContact(nametodelte);
                         break;
+
+                    case 6:
+
+                        Console.WriteLine("Exiting...");
+                        return;
 
                 }
             }
